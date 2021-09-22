@@ -1,7 +1,8 @@
-import { Meteor } from "meteor/meteor";
 import React from "react";
 import expect from "expect";
 import { mount } from "enzyme";
+import { Meteor } from "meteor/meteor";
+
 import { NoteListHeader } from "./NoteListHeader";
 
 if (Meteor.isClient) {
