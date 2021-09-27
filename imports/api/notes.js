@@ -12,7 +12,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  "notes,insert"() {
+  "notes.insert"() {
     if (!this.userId) {
       throw new Meteor.Error("not-authorized");
     }
