@@ -3,7 +3,7 @@ import moment from "moment";
 import { Session } from "meteor/session";
 import { createContainer } from "meteor/react-meteor-data";
 
-const NoteListItem = (props) => {
+export const NoteListItem = (props) => {
   return (
     <div
       onClick={() => {
@@ -11,6 +11,7 @@ const NoteListItem = (props) => {
       }}
     >
       <h5>{props.note.title || "Untitle note"}</h5>
+      {props.note.selected ? "selected" : undefined}
       <p>{moment(props.note.updatedAt).format("M/DD/YY")}</p>
     </div>
   );
