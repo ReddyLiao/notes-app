@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import React from "react";
 import expect from "expect";
 import { mount } from "enzyme";
+
 import { Signup } from "./Signup";
 
 if (Meteor.isClient) {
@@ -16,9 +17,10 @@ if (Meteor.isClient) {
       wrapper.setState({ error: "" });
       expect(wrapper.find("p").length).toBe(0);
     });
+
     it("should call createUser with the form data", function () {
-      const email = "123@123test.com";
-      const password = "aaaaaaaaa";
+      const email = "andrew@test.com";
+      const password = "password123";
       const spy = expect.createSpy();
       const wrapper = mount(<Signup createUser={spy} />);
 
@@ -28,9 +30,10 @@ if (Meteor.isClient) {
 
       expect(spy.calls[0].arguments[0]).toEqual({ email, password });
     });
+
     it("should set error if short password", function () {
-      const email = "123@123test.com";
-      const password = "aaa";
+      const email = "andrew@test.com";
+      const password = "123                       ";
       const spy = expect.createSpy();
       const wrapper = mount(<Signup createUser={spy} />);
 
@@ -40,10 +43,10 @@ if (Meteor.isClient) {
 
       expect(wrapper.state("error").length).toBeGreaterThan(0);
     });
-    it("should set createUser callback errors", function () {
-      const password = "aaaaaaaaa";
-      const reason = "This is why it failed";
 
+    it("should set createUser callback errors", function () {
+      const password = "password123!";
+      const reason = "This is why it failed";
       const spy = expect.createSpy();
       const wrapper = mount(<Signup createUser={spy} />);
 
