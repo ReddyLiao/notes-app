@@ -5,4 +5,5 @@ import "../imports/api/users";
 import "../imports/api/notes";
 import "../imports/startup/simple-schema-configuration.js";
 
+const uri = process.env.MONGODB_URI;
 Meteor.startup(() => {});
