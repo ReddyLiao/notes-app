@@ -1,6 +1,6 @@
 .page-content {
   display: flex;
-  height: $page-content-hight;
+  height: $page-content-height;
   margin: 0 auto;
   max-width: $site-max-width;
 
@@ -15,9 +15,10 @@
   width: 100vw;
 
   position: fixed;
-  top: $header-hight;
+  top: $header-height;
   left: -100vw;
   bottom: 0;
+  z-index: 1;
 
   @include desktop {
     display: flex;

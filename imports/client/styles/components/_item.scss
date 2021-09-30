@@ -1,9 +1,10 @@
-//Item List
+// Item List
 .item-list {
   background-color: white;
   border: 1px solid $grey;
   overflow-y: scroll;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .item-list__header {
@@ -12,11 +13,11 @@
   padding: $space;
 }
 
-//Item
+// Item
 .item {
+  border-left: $item-border-width solid transparent;
   cursor: pointer;
   padding: $space;
-  border-left: $item-border-width solid transparent;
   transition: background-color 0.3s ease, border-left 0.3s ease;
 }
 
@@ -24,6 +25,7 @@
   background-color: $light-grey;
   border-left: $item-border-width solid $grey;
 }
+
 .item--selected,
 .item--selected:hover {
   background-color: $light-grey;
@@ -35,15 +37,17 @@
   font-size: $base-font-size;
   margin-bottom: 0.4rem;
 }
+
 .item--selected .item__title {
   font-weight: bold;
 }
+
 .item__subtitle {
   color: $dark-grey;
   margin: 0;
 }
 
-//Empty Item
+// Empty Item
 .empty-item {
   font-style: italic;
   padding: $space;
