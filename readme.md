@@ -1,6 +1,7 @@
 # Notes App
 
 This is a notes application built on Meteor and created for my Udemy course.
+![This is an image](/assets/readme_note.jpg)
 
 ## Getting Started
 
